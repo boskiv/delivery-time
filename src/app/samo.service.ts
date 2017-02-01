@@ -6,7 +6,7 @@ import {Store} from "./models/store";
 @Injectable()
 export class SamoService {
   private storesUrl = 'assets/data/stores.json';
-  private samoUrl = 'http://samo.org/op/zip';
+  private samoUrl = 'https://samo.org/op/zip';
 
   constructor(private http: Http) { }
 
