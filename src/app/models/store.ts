@@ -8,4 +8,5 @@ export class Store {
   picture: string;
   deliveryTime: string;
   distance: number = 0;
+  closest: boolean;
 }

@@ -41,6 +41,7 @@
           </div>
           <div class="card-footer">
             <small class="text-muted"> <strong>Time to delivery:</strong> {{ store.deliveryTime }} </small>
+            <span *ngIf=store.closest class="badge badge-success">Closest</span>
           </div>
         </div>
       </div>

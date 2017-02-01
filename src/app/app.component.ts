@@ -9,11 +9,11 @@ import {runTest} from "tslint/lib/test";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
   public stores: Store[] = [];
   errorMessage: string;
   resultMessage: string;
   zip_code: number;
+
   constructor(private samoService: SamoService) {
 
   }
@@ -22,16 +22,19 @@ export class AppComponent {
   getDistance(zip_code){
     this.getUserState(zip_code)
     this.zip_code = zip_code;
-
+    let closestStoreDistance = 0;
     for (let store of this.stores) {
+
       this.samoService.getDistance(store.zip_code, zip_code).subscribe(
         distance => {
-          console.log(distance)
+          store.distance = distance
           store.deliveryTime = this.getDeliveryTime(distance)
+          this.isClosest(store)
         },
         error => this.errorMessage = <any>error
       );
     }
+
   }
 
   getDeliveryTime(distance) {
@@ -61,5 +64,14 @@ export class AppComponent {
 
   private getUserState(zip_code) {
     this.samoService.getUserState(zip_code).subscribe(state => this.resultMessage = state)
+  }
+
+  private isClosest(closetStore: Store) {
+    for (let store of this.stores){
+      if (closetStore.distance < store.distance) {
+        closetStore.closest = true;
+        store.closest = false;
+      }
+    }
   }
 }
