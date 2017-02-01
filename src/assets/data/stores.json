@@ -6,7 +6,8 @@
       "lat":0.659201,
       "lng":-2.13711,
       "city":"San Francisco",
-      "state":"CA"
+      "state":"CA",
+      "picture": "http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1429821784/CHARMING0415-san-francisco.jpg?itok=vmayDoQQ"
     },
     {
       "name": "Warehouse",
@@ -14,7 +15,8 @@
       "lat":0.735242,
       "lng":-1.53319,
       "city":"Northbrook",
-      "state":"IL"
+      "state":"IL",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/9/98/NorthbrookWelcomeSign.jpg"
     }
   ]
 }

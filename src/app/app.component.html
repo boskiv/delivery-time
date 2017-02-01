@@ -1,3 +1,49 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container mt-5">
+
+  <div class="row">
+    <div class="col-12">
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        <p class="error">{{errorMessage}}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          Calculate delivery time
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Enter your zip code (US only)</h4>
+            <div class="input-group">
+              <input it="zip_code" type="text" class="form-control" placeholder="ZIP for..." [(ngModel)]="zip_code">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button" (click)="getDistance(zip_code)">Go!</button>
+              </span>
+            </div>
+          <div *ngIf="resultMessage">
+            <p class="error">{{resultMessage}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="card-deck">
+        <div class="card" *ngFor="let store of stores">
+          <img class="card-img-top" src="{{ store.picture }}" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">{{ store.name }}</h4>
+            <p class="card-text"> {{store.city}}, {{ store.state }} </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"> <strong>Time to delivery:</strong> {{ store.deliveryTime }} </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
