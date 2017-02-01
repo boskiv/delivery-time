@@ -1,0 +1,20 @@
+{
+  "stores": [
+    {
+      "name": "Main Store",
+      "zip_code":"94117",
+      "lat":0.659201,
+      "lng":-2.13711,
+      "city":"San Francisco",
+      "state":"CA"
+    },
+    {
+      "name": "Warehouse",
+      "zip_code":"60062",
+      "lat":0.735242,
+      "lng":-1.53319,
+      "city":"Northbrook",
+      "state":"IL"
+    }
+  ]
+}
